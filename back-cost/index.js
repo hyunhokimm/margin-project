@@ -6,7 +6,13 @@ const marginRoute = require("./route/marginRoute");
 const mongoose = require("mongoose");
 const app = express();
 const PORT = process.env.PORT || 5000;
-app.use(cors({ origin: "https://marginproject.netlify.app" }));
+app.use(
+  cors({
+    origin: "https://marginproject.netlify.app",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    credentials: true, // 이 옵션을 추가하면 인증된 요청을 허용합니다 (쿠키 전송 등)
+  })
+);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 dotenv.config();
