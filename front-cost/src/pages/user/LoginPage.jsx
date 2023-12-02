@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { styled } from "styled-components";
 import instance from "../../static/axiosInstance";
 import userStore from "../../static/store/userStore";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -127,7 +127,8 @@ const LoginPage = () => {
           <div>{userInfo?.email}</div>
         )}
         <div style={{ display: "flex", alignItems: "end" }}>
-          <P>회원가입이 필요하다면?</P> <A href="/signup">signup</A>
+          <P>회원가입이 필요하다면?</P>{" "}
+          <Link to="https://marginproject.netlify.app/signup">signup</Link>
         </div>
       </Form>
     </Wrapper>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { styled } from "styled-components";
 import instance from "../../static/axiosInstance";
+import { Link } from "react-router-dom";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -154,7 +155,8 @@ const SignupPage = () => {
           <div></div>
         )}
         <div style={{ display: "flex", alignItems: "end" }}>
-          <P>회원가입이 되어있다면?</P> <A href="/login">login</A>
+          <P>회원가입이 되어있다면?</P>{" "}
+          <Link to="https://marginproject.netlify.app/login">login</Link>
         </div>
       </Form>
     </Wrapper>
