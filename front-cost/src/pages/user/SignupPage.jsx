@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { styled } from "styled-components";
 import instance from "../../static/axiosInstance";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -55,6 +55,7 @@ const SignupPage = () => {
   const [rePassword, setRePassword] = useState("");
   const [nickname, setNickname] = useState("");
   const [err, setErr] = useState("");
+  const navigate = useNavigate();
 
   const onChange = (e) => {
     const { name, value } = e.target;
@@ -95,7 +96,7 @@ const SignupPage = () => {
         console.log(result);
         setErr("회원 가입 성공");
         setTimeout(() => {
-          location.href = "login";
+          navigate("/login");
         }, 1500);
       })
       .catch((err) => {
